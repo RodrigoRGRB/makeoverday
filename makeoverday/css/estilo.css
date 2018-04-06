@@ -23,7 +23,7 @@ img{
 
 .super{
     max-width: 1100px;
-    margin:0 auto;
+    margin:20px auto 40px auto;
     display: flex;
 }
 
@@ -32,6 +32,9 @@ img{
   max-width: 535px;
 }
 
+.menu{
+  margin:40px 0 0 0;
+}
 
 .menu ul{
   display: flex;
@@ -52,6 +55,26 @@ img{
 }
 /*Menu*/
 
+
+/*formulario*/
+.container {
+  width: 100%; /* define a largura do campo */
+  margin: 20px 0 0 0;
+}
+input {
+  width: 50%;
+  } /* define a largura do campo igual a largura do container */
+input,  button {
+  padding: 10px;
+  border: none;
+}
+
+button{
+  background-color: #ff879f;
+  color: white;
+}
+
+/*formulario*/
 nav{
   max-width: 1100px;
   margin:0 auto;
@@ -84,7 +107,7 @@ nav li a:hover{
 }
 
 header{
-  max-width: 930px;
+  max-width: 1100px;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -93,7 +116,7 @@ header{
   margin:0 auto;
 }
 .main{
-  max-width: 930px;
+  max-width: 1100px;
   margin:20px auto;
   display: flex;
   justify-content: space-between;
@@ -101,15 +124,33 @@ header{
 .principal{
     max-width: 655px;
     background-color: white;
+    padding: 40px;
 }
-
 .post{
   background-color: white;
+}
+.principalTitulo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.data p{
+  font-size: 2.5em;
+  font-family: sans-serif;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 0.8;
+}
+
+.data span{
+  margin-top:-20px;
+  padding: 0;
 }
 
 .titulo, .ptitulo{
   font-family: 'Amatic SC', cursive;
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
 }
 .marcadores{
@@ -117,8 +158,7 @@ header{
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
 }
 
 .marcadores ul{
@@ -127,13 +167,13 @@ header{
 }
 
 .marcadores a{
-    background-color: #d3d3d3;
-      font-weight: 100;
-      display: block;
-      padding: 10px;
-      text-transform: uppercase;
-      color:#fef3f4;
-      margin:2px;
+    background-color: #d9d9d9;
+    font-weight: 100;
+    display: block;
+    padding: 10px;
+    text-transform: uppercase;
+    color:#fff4f5;
+    margin:2px;
 }
 
 .marcadores a:hover{
