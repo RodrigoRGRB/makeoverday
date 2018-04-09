@@ -240,11 +240,11 @@ header{
   background: #ddd;
 }
 .card img{
-  height: 188px;
+  width: 300px;
 }
 
 .card p{
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight:bold;
   font-family: 'Amatic SC', cursive;
   margin:5px 0 5px 0;
@@ -252,7 +252,10 @@ header{
 }
 .card p+p{
   font-size: 1em;
+  line-height: 1.4;
   font-weight: normal;
+  font-family: cursive;
+  color: #444;
 }
 
 .redes{
@@ -266,6 +269,15 @@ header{
   font-weight: bold;
 }
 
+.formulario form{
+  display: flex;
+  justify-content: space-between;
+}
+
+.formulario .caixa{
+  width: 80%;
+  border:0.5px solid #bbb;
+}
 .textocenter{
   text-align: center;
   max-width: 930px;
