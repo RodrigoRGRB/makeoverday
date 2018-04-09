@@ -2,6 +2,7 @@
   padding: 0;
   margin:0;
 }
+
 ul{
     list-style: none;
 }
@@ -13,6 +14,7 @@ a{
 body{
     background-color: #f3f3f3;
 }
+
 img{
     display: block;
     max-width: 100%;
@@ -153,6 +155,14 @@ header{
   font-size: 3em;
   text-align: center;
 }
+
+.ptitulo{
+  font-size:2em;
+  font-weight: bold;
+  padding: 0;
+  margin:0;
+}
+
 .marcadores{
   max-width: 655px;
   display: flex;
@@ -223,24 +233,39 @@ header{
 }
 
 .perfil{
-  width: 250px;
-  background-color: red;
+  width: 300px;
 }
 .card{
-  width: 250px;
+  width: 300px;
+  background: #ddd;
 }
 .card img{
   height: 188px;
 }
 
 .card p{
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight:bold;
+  font-family: 'Amatic SC', cursive;
+  margin:5px 0 5px 0;
+  padding: 5px;
 }
 .card p+p{
   font-size: 1em;
   font-weight: normal;
 }
+
+.redes{
+  margin: 15px 0;
+}
+
+.formulario p{
+  font-size: 1.5em;
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  font-weight: bold;
+}
+
 .textocenter{
   text-align: center;
   max-width: 930px;
