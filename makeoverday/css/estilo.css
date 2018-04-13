@@ -386,59 +386,30 @@ header{
 
 .saibaMais{
   margin: 0 auto;
-  max-width: 930px;
+  max-width: 1100px;
   display: flex;
   justify-content: space-between;
 }
 
 .module{
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/skyscrapers.jpg);
-  background-attachment: fixed;
-  width: 400px;
-  height: 300px;
+  width: 300px;
+  height: 250px;
   position: relative;
   overflow: hidden;
-  margin: 20px;
+  display: flex;
 }
 
-.module > header {
+h2 {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 10px;
-  background: inherit;
-  background-attachment: fixed;
-  overflow: hidden;
-}
-.module > header::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: inherit;
-  background-attachment: fixed;
-  -webkit-filter: blur(4px);
-  filter: blur(4px);
-}
-.module > header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.25)
-}
-.module > header > h1 {
-  margin: 0;
+  bottom: 10px;
+  right:  10px;
+	background: rgba(247,164,176, 0.9);
+  padding: 12px;
   color: white;
-  position: relative;
-  z-index: 1;
+  margin: 0;
+  font: 14px Sans-Serif;
 }
-
 
 .box2{
   flex:1;
