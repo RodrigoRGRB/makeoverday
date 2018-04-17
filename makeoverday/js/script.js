@@ -16,7 +16,7 @@
         $(function(){   
           
           var superbg = $('.super');  
-          var nav = $('nav');
+          var nav = $('.nav');
  					
 					nav.hide();
 					
