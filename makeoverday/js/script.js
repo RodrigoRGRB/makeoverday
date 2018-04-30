@@ -16,7 +16,7 @@
         $(function(){   
           
           var superbg = $('.super');  
-          var nav = $('.nav');
+          var nav = $('.menusuper');
  					
 					nav.hide();
 					
@@ -25,8 +25,8 @@
 							nav.show();
 							
             } else {  
-							nav.hide();
-							superbg.show();
+                nav.hide();
+                superbg.show();
             } 
           });  
           
