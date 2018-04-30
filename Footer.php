@@ -13,8 +13,8 @@
         <div class="imagem">
 					<?php
 // use this instagram access token generator http://instagram.pixelunion.net/
-$access_token="482019713.1677ed0.53f4e62b666a45a3ae3b7fdf1b683b3d";
-$photo_count=6;
+$access_token="19469326.1677ed0.12f94b8c20494361aee95a32ba39d9e8";
+$photo_count=7;
      
 $json_link="https://api.instagram.com/v1/users/self/media/recent/?";
 $json_link.="access_token={$access_token}&count={$photo_count}";

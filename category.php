@@ -133,7 +133,7 @@
 
         <div class="facebook">
           <p>Siga FanPage :)</p>
-          <img src="<?php echo get_template_directory_uri()?>/img/fanpage.png" alt="">
+          <div class="fb-page" data-href="https://www.facebook.com/NicoleMakeOficial/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/NicoleMakeOficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/NicoleMakeOficial/">Nicole Make</a></blockquote></div>
         </div>
 
       </section>

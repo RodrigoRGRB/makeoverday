@@ -34,7 +34,6 @@
                   
               </ul>
             </div>
-						<?php the_post_thumbnail(); ?>
               
               
             <p class="paragrafoPrincipal">
@@ -46,9 +45,9 @@
           
             
           
-          <section class="comentario">
-            <img src="<?php echo get_template_directory_uri()?>/img/curtir.png" />
-            <p class="pcomentario">Comente Aqui<span class="circleComentario">33</span> </p>
+             <section class="comentario">
+						<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="10" data-order-by="social" data-colorscheme="light"></div>
+            <p class="pcomentario">Comente Aqui<span class="circleComentario"><?php echo full_comment_count(); ?></span> </p>
           </section>
             
         <?php endwhile; else : ?>
@@ -133,7 +132,8 @@
 
         <div class="facebook">
           <p>Siga FanPage :)</p>
-          <img src="<?php echo get_template_directory_uri()?>/img/fanpage.png" alt="">
+          <div class="fb-page" data-href="https://www.facebook.com/NicoleMakeOficial/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/NicoleMakeOficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/NicoleMakeOficial/">Nicole Make</a></blockquote></div>
+        </div>
         </div>
 
       </section>

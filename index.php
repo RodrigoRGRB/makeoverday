@@ -17,11 +17,11 @@
               
             <div class="principalTitulo">
               <div class="data">
-								<?php //the_post_thumbnail(); ?>
+                  
                 <p><?php the_time('j') ?></p>
                 <span><?php the_time('F') ?></span>
               </div>
-              <p class="titulo"><?php the_title(); ?><p>
+                <p class="titulo"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><p>
             </div>
             <div class="marcadores">
               <ul>
@@ -73,10 +73,7 @@ wp_reset_postdata();
           
             
           
-          <section class="comentario">
-						<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="10" data-order-by="social" data-colorscheme="light"></div>
-            <p class="pcomentario">Comente Aqui<span class="circleComentario"><?php echo full_comment_count(); ?></span> </p>
-          </section>
+         
             
         <?php endwhile; else : ?>
                     <article>
@@ -89,7 +86,8 @@ wp_reset_postdata();
 						
 						
             <ul class="ch-grid">
-						<?php if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
+						<?php query_posts('showposts=5');
+        if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
   					<li>
 							<?php 
 	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'thumbnail'); 
@@ -157,11 +155,12 @@ wp_reset_postdata();
 						
 <?php
   $args = array(
-        'posts_per_page' => 5,
+        'posts_per_page' => 3,
         'meta_key' => 'meta-checkbox',
         'meta_value' => 'yes'
     );
     $featured = new WP_Query($args);
+               
  
 if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); 
 ?>
@@ -214,11 +213,8 @@ if ($oque->have_posts()): while($oque->have_posts()): $oque->the_post();
 	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),array( 250, 250)); 
   ?>
 		<div class="module module2" style="background-image:url(<?= esc_url($featured_img_url); ?>)">
-			 
-			
-		
-<h2><?php the_category(', '); ?></h2>
-					</div>
+			 <h2><?php the_category(', '); ?></h2>
+        </div>
 					<p><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></p>
 					<p><?php the_excerpt();?>
 					</p>

@@ -200,6 +200,10 @@ header{
   text-align: center;
 }
 
+.titulo a{
+    color: black;
+}
+
 .ptitulo{
   font-size:2em;
   font-weight: bold;
@@ -455,6 +459,7 @@ header{
 	width: 300px;
 }
 
+
 .saibaMaisArticle p{
 	
 	font-family: 'Dorsa', sans-serif;
@@ -469,6 +474,16 @@ header{
 	text-align: justify;
 }
 
+.saibaMaisArticle p a{
+    color: black;
+    font-size: 0.5em;
+    font-family: 'Open sans', sans-serif;
+    font-weight: bold;
+    display: block;
+    letter-spacing: -1px;
+}
+
+
 .module{
   width: 300px;
   height: 250px;
@@ -476,6 +491,10 @@ header{
   overflow: hidden;
   display: flex;
 	background-repeat: no-repeat;
+}
+
+.module a{
+    color: white;
 }
 
 h2 {
