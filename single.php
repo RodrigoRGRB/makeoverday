@@ -99,7 +99,7 @@
 
       </section>
 
-      <section class="perfil">teste
+      <section class="perfil">
         <div class="card">
           <img src="<?php echo get_template_directory_uri()?>/img/perfil.png" alt="perfil">
           <p>Nicole Make</p>
