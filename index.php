@@ -70,6 +70,11 @@ wp_reset_postdata();
             </p>
 
           </section>
+					
+					<section class="comentario">
+						<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+            <p class="pcomentario">Comentarios <span class="fb-comments-count circleComentario" data-href="<?php the_permalink(); ?>"></span> </p>
+          </section>
           
             
           
@@ -91,12 +96,13 @@ wp_reset_postdata();
   					<li>
 							<?php 
 	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'thumbnail'); 
-  ?>
+  ?>	<a href="<?php the_permalink(); ?>">
   						<div class="ch-item" style="background-image:url(<?= esc_url($featured_img_url); ?>)">
   							<div class="ch-info">
   								<h3><?php the_title(); ?></h3>
   							</div>
   						</div>
+							</a>
   					</li>
 						<?php endwhile; else : ?>
                     <article>
@@ -164,7 +170,6 @@ wp_reset_postdata();
  
 if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); 
 ?>
-
 <article class="saibaMaisArticle">
 	<?php 
 	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),array( 300, 300)); 
@@ -174,7 +179,7 @@ if ($featured->have_posts()): while($featured->have_posts()): $featured->the_pos
 			
 		
 <h2><?php the_category(', '); ?></h2>
-					</div>
+			</div>
 					<p><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></p>
 					<p><?php the_excerpt();?>
 					</p>

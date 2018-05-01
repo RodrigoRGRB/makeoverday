@@ -42,6 +42,7 @@ add_filter('get_search_form', 'my_search_form');
 
 //somatorio de comentarios
 
+/* Comentario facebook
 function full_comment_count() {
 	global $post;
 	$url = get_permalink($post->ID);  
@@ -56,7 +57,8 @@ if ($realCount == 0 || !isset($realCount)) {
     $realCount = 0;
 }
 	return $realCount;
-}
+}*/
+
 
 /*Featured POst*/
 function sm_custom_meta() {
@@ -119,7 +121,7 @@ add_action( 'save_post', 'sm_meta_save' );
 
 
 
-
+//Comentarios o que
 function sm_custom_meta_oque() {
     add_meta_box( 'sm_meta_oque', __( 'O que é?', 'sm-textdomain' ), 'sm_meta_callback_oque', 'post' );
 }

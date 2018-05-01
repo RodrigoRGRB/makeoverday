@@ -12,11 +12,10 @@
               
             <div class="principalTitulo">
               <div class="data">
-								<?php //the_post_thumbnail(); ?>
                 <p><?php the_time('j') ?></p>
                 <span><?php the_time('F') ?></span>
               </div>
-              <p class="titulo"><?php the_title(); ?><p>
+							<p class="titulo"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><p>
             </div>
             <div class="marcadores full">
               <ul>
@@ -69,8 +68,8 @@ wp_reset_postdata();
             
           
           <section class="comentario">
-            <div class="fb-comments" data-href="http://makeoverday.com.br/" data-numposts="5"></div>
-            <p class="pcomentario">Comente Aqui<span class="circleComentario"><?php echo full_comment_count(); ?></span> </p>
+						<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+            <p class="pcomentario">Comentarios <span class="fb-comments-count circleComentario" data-href="<?php the_permalink(); ?>"></span> </p>
           </section>
             
         <?php endwhile; else : ?>

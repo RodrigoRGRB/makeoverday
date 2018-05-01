@@ -12,7 +12,7 @@
                 <p><?php the_time('j') ?></p>
                 <span><?php the_time('F') ?></span>
               </div>
-              <p class="titulo"><?php the_title(); ?><p>
+							<p class="titulo"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><p>
             </div>
             <div class="marcadores">
               <ul>
@@ -34,7 +34,6 @@
                   
               </ul>
             </div>
-						<?php the_post_thumbnail(); ?>
               
               
             <p class="paragrafoPrincipal">
@@ -47,8 +46,11 @@
             
           
           <section class="comentario">
-            <img src="<?php echo get_template_directory_uri()?>/img/curtir.png" />
-            <p class="pcomentario">Comente Aqui<span class="circleComentario">33</span> </p>
+            <div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+						<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+						<script src="https://apis.google.com/js/platform.js" async defer></script>
+  					<g:plusone></g:plusone>
+						<p class="pcomentario">Comentarios <span class="fb-comments-count circleComentario" data-href="<?php the_permalink(); ?>"></span></p>
           </section>
             
         <?php endwhile; else : ?>
@@ -58,43 +60,28 @@
             <?php endif; ?>
             
           <section class="postRelacionados">
-            <ul class="ch-grid">
-  					<li>
-  						<div class="ch-item ch-img-1">
-  							<div class="ch-info">
-  								<h3>Use what you have</h3>
-  							</div>
-  						</div>
-  					</li>
-  					<li>
-  						<div class="ch-item ch-img-2">
-  							<div class="ch-info">
-  								<h3>Common Causes of Stains</h3>
-  							</div>
-  						</div>
-  					</li>
-  					<li>
-  						<div class="ch-item ch-img-3">
-  							<div class="ch-info">
-  								<h3>Pink Lightning</h3>
-  							</div>
-  						</div>
-  					</li>
-            <li>
-  						<div class="ch-item ch-img-3">
-  							<div class="ch-info">
-  								<h3>Pink Lightning</h3>
 
-  							</div>
-  						</div>
-  					</li>
-            <li>
-  						<div class="ch-item ch-img-3">
+						
+						
+            <ul class="ch-grid">
+						<?php query_posts('showposts=5');
+        if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
+  					<li>
+							<?php 
+	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'thumbnail'); 
+  ?>
+  						<div class="ch-item" style="background-image:url(<?= esc_url($featured_img_url); ?>)">
   							<div class="ch-info">
-  								<h3>Pink Lightning</h3>
+  								<h3><?php the_title(); ?></h3>
   							</div>
   						</div>
   					</li>
+						<?php endwhile; else : ?>
+                    <article>
+                        <p>Sorry, no posts were found!</p>
+                    </article>
+            <?php endif; ?>
+  					
   				</ul>
           </section>
 

@@ -48,6 +48,7 @@ $obj = json_decode(preg_replace('/("\w+"):(\d+)/', '\\1:"\\2"', $json), true);
     </footer>
 
 <!-- Scripts --> 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script type="text/javascript" src="<?php echo get_template_directory_uri()?>/js/script.js"></script>

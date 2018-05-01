@@ -12,7 +12,7 @@
                 <p><?php the_time('j') ?></p>
                 <span><?php the_time('F') ?></span>
               </div>
-              <p class="titulo"><?php the_title(); ?><p>
+							<p class="titulo"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><p>
             </div>
             <div class="marcadores">
               <ul>
@@ -30,70 +30,54 @@
                 }
             ?>
                   
-                
-                  
               </ul>
             </div>
               
               
             <p class="paragrafoPrincipal">
 
-            <?php the_excerpt(); ?>
+            <?php the_content(); ?>
+							
+							
             </p>
 
           </section>
           
-            
-          
-             <section class="comentario">
-						<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="10" data-order-by="social" data-colorscheme="light"></div>
-            <p class="pcomentario">Comente Aqui<span class="circleComentario"><?php echo full_comment_count(); ?></span> </p>
+          <section class="comentario">
+						
+						<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+						<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+						<script src="https://apis.google.com/js/platform.js" async defer></script>
+  					<g:plusone></g:plusone>
+						<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5"></div>
           </section>
             
         <?php endwhile; else : ?>
                     <article>
                         <p>Sorry, no posts were found!</p>
                     </article>
-            <?php endif; ?>
+         <?php endif; ?>
             
-          <section class="postRelacionados">
+         <section class="postRelacionados">
             <ul class="ch-grid">
+						<?php query_posts('showposts=5');
+        if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
   					<li>
-  						<div class="ch-item ch-img-1">
+							<?php 
+	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'thumbnail'); 
+  ?>
+  						<div class="ch-item" style="background-image:url(<?= esc_url($featured_img_url); ?>)">
   							<div class="ch-info">
-  								<h3>Use what you have</h3>
+  								<h3><?php the_title(); ?></h3>
   							</div>
   						</div>
   					</li>
-  					<li>
-  						<div class="ch-item ch-img-2">
-  							<div class="ch-info">
-  								<h3>Common Causes of Stains</h3>
-  							</div>
-  						</div>
-  					</li>
-  					<li>
-  						<div class="ch-item ch-img-3">
-  							<div class="ch-info">
-  								<h3>Pink Lightning</h3>
-  							</div>
-  						</div>
-  					</li>
-            <li>
-  						<div class="ch-item ch-img-3">
-  							<div class="ch-info">
-  								<h3>Pink Lightning</h3>
-
-  							</div>
-  						</div>
-  					</li>
-            <li>
-  						<div class="ch-item ch-img-3">
-  							<div class="ch-info">
-  								<h3>Pink Lightning</h3>
-  							</div>
-  						</div>
-  					</li>
+						<?php endwhile; else : ?>
+                    <article>
+                        <p>Sorry, no posts were found!</p>
+                    </article>
+            <?php endif; ?>
+  					
   				</ul>
           </section>
 
@@ -133,7 +117,6 @@
         <div class="facebook">
           <p>Siga FanPage :)</p>
           <div class="fb-page" data-href="https://www.facebook.com/NicoleMakeOficial/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/NicoleMakeOficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/NicoleMakeOficial/">Nicole Make</a></blockquote></div>
-        </div>
         </div>
 
       </section>
