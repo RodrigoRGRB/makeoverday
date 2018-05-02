@@ -2,11 +2,137 @@
 
 
       <header>
-        <img src="<?php echo get_template_directory_uri()?>/img/video.png" />
-        <img src="<?php echo get_template_directory_uri()?>/img/video2.png" />
-        <img src="<?php echo get_template_directory_uri()?>/img/modelo.png" />
-      </header>
+        <!-- Slideshow container -->
+					<div class="slideshow-container">
+						<?php
+												$args = array( 'post_type' => 'teste2', 'posts_per_page' => 9 );
+												$loop = new WP_Query( $args );
+												while ( $loop->have_posts() ) : $loop->the_post();
 
+													$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+						
+												echo '<div class="meusSlides fade">
+																<img src="'.esc_url($featured_img_url).'" style="width:100%">
+															</div>';
+
+												endwhile;
+						?>
+
+
+
+
+<a class="anterior" onclick="maisSlides(-1)">&#10094;</a>
+<a class="proximo" onclick="maisSlides(1)">&#10095;</a>
+
+</div>
+				<!-- Slideshow container -->
+        
+				<iframe width="350" height="250" src="https://www.youtube.com/embed/YNnLmHkQuic?showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+        <div class="galeria-container">
+					<?php
+ 						$indice = 1;
+						$args = array( 'post_type' => 'teste', 'posts_per_page' => 9 );
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							
+			 				$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'thumbnail');
+			 	
+							echo '<img src="'.esc_url($featured_img_url).'" onclick="openModal();currentSlide('.$indice.')" class="hover-shadow cursor">';
+						
+			 			$indice++;
+			 			endwhile;
+					?>
+						
+				
+				</div>
+				
+				
+      </header>
+	<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+					<?php
+						$args = array( 'post_type' => 'teste', 'posts_per_page' => 9 );
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							
+			 				$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+								
+						echo '<div class="mySlides">
+      							<img src="'.esc_url($featured_img_url).'"  style="width:100%">
+    							</div>';
+						
+			 			endwhile;
+					?>
+    
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		<?php
+ 						$indice = 1;
+						$args = array( 'post_type' => 'teste', 'posts_per_page' => 9 );
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							
+			 				$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+								
+						echo '<div class="column">
+										<img class="demo cursor" src="'.esc_url($featured_img_url).'"  onclick="currentSlide('.$indice.')" ">
+									</div>';
+						
+			 			$indice++;
+			 			endwhile;
+					?>
+    
+    
+  </div>
+</div>
+
+		
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+		
+		
+		
+		
       <section class="main">
           
         

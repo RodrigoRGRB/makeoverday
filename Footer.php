@@ -48,6 +48,31 @@ $obj = json_decode(preg_replace('/("\w+"):(\d+)/', '\\1:"\\2"', $json), true);
     </footer>
 
 <!-- Scripts --> 
+<script>
+var posicaoIndex = 1;
+mostrarSlides(posicaoIndex);
+
+function maisSlides(n) {
+  mostrarSlides(posicaoIndex += n);
+}
+
+
+function mostrarSlides(n) {
+  var i;
+  var power = document.getElementsByClassName("meusSlides");
+  var pontos = document.getElementsByClassName("ponto");
+  if (n > power.length) {posicaoIndex = 1}    
+  if (n < 1) {posicaoIndex = power.length}
+  for (i = 0; i < power.length; i++) {
+      power[i].style.display = "none";  
+  }
+  for (i = 0; i < pontos.length; i++) {
+      pontos[i].className = pontos[i].className.replace(" active", "");
+  }
+  power[posicaoIndex-1].style.display = "block";  
+  pontos[posicaoIndex-1].className += " active";
+}
+</script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

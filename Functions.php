@@ -167,8 +167,76 @@ if( isset( $_POST[ 'meta-checkbox-oque' ] ) ) {
 add_action( 'save_post', 'sm_meta_save_oque' );
 
 
+function cadastrando_post_type_galeria(){
+		//Configuração menu galeria
+	$description = 'Imagens da galeria';
+	$plural = 'Galeria';
+	$singular = 'Imagem';
+	
+	$labels = array(
+		'name' => $plural,
+		'name_singular' => $singular,
+		'add_new_item' => 'Adicionar nova '.$singular,
+		'edit_item' => 'Editar '.$singular
+	);
+	
+	$supports = array(
+		'title',
+		'editor',
+		'thumbnail'
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'description' => $description,
+		'menu_icon' => 'dashicons-format-gallery',
+		'supports' => $supports,
+		'exclude_from_search' => true
+	);
+	register_post_type('teste' , $args);
+}
+
+add_action('init','cadastrando_post_type_galeria');
 
 
+/*Cadastro do slideshow*/
+
+
+function cadastrando_post_type_slideshow(){
+		//Configuração menu galeria
+	$description = 'Imagens da galeria';
+	$plural = 'Slideshow';
+	$singular = 'Imagem';
+	
+	$labels = array(
+		'name' => $plural,
+		'name_singular' => $singular,
+		'add_new_item' => 'Adicionar nova '.$singular,
+		'edit_item' => 'Editar '.$singular
+	);
+	
+	$supports = array(
+		'title',
+		'editor',
+		'thumbnail'
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'description' => $description,
+		'menu_icon' => 'dashicons-images-alt2',
+		'supports' => $supports,
+		'exclude_from_search' => true
+	);
+	register_post_type('teste2' , $args);
+}
+
+add_action('init','cadastrando_post_type_slideshow');
+
+
+/*Cadastro do slideshow*/
 
 
 
